@@ -1,0 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+nav {
+  background-color: #333;
+  color: snow;
+  padding: 0.5rem;
+  font-family: "Roboto", sans-serif;
+}

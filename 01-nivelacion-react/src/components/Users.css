@@ -1,0 +1,10 @@
+th,
+td {
+  border: 1px solid #eee;
+  padding: 10px;
+  margin: 0;
+}
+
+a {
+  color: gold;
+}
