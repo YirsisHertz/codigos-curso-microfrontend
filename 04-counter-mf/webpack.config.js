@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:3002/",
+    publicPath: "https://elaborate-crumble-973d08.netlify.app/",
   },
 
   resolve: {
@@ -41,7 +41,7 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "counter_react",
+      name: "counter_mf",
       filename: "remoteEntry.js",
       remotes: {},
       exposes: {

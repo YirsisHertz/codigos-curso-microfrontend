@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import CounterReact from "./components/Counter";
+import Counter from "./components/Counter";
 
-const App = () => <CounterReact />;
+const App = () => <Counter />;
 
 ReactDOM.render(<App />, document.getElementById("app"));

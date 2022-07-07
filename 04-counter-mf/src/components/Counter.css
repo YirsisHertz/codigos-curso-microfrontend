@@ -1,0 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Finlandica&display=swap");
+
+.Counter-container {
+  font-family: "Finlandica", sans-serif;
+  padding: 1rem;
+  text-align: center;
+  background-color: #444;
+  color: snow;
+}

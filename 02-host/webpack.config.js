@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPl
 const deps = require("./package.json").dependencies;
 module.exports = {
   output: {
-    publicPath: "http://localhost:3000/",
+    publicPath: "https://thriving-florentine-4047e9.netlify.app/",
   },
 
   resolve: {
@@ -44,8 +44,10 @@ module.exports = {
       name: "host",
       filename: "remoteEntry.js",
       remotes: {
-        navbar: "navbar@http://localhost:3001/remoteEntry.js",
-        counterReact: "counter_react@http://localhost:3002/remoteEntry.js",
+        navbar:
+          "navbar@https://brilliant-tarsier-f680b6.netlify.app/remoteEntry.js",
+        counterReact:
+          "counter_mf@https://elaborate-crumble-973d08.netlify.app/remoteEntry.js",
       },
       exposes: {},
       shared: {

@@ -9,8 +9,9 @@ import "./index.css";
 const App = () => (
   <>
     <Navbar />
+
     <div className="App-container">
-      <h1>Counter React</h1>
+      <h2>Counter MF</h2>
       <CounterReact />
     </div>
   </>
