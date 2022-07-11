@@ -12,9 +12,9 @@ export const useColors = () => {
   const handleSaveColor = (e) => {
     e.preventDefault();
 
-    const copyColors = [...colorsList, color];
+    const copyColors = [color, ...colorsList];
 
-    setColorsList(copyColors.reverse());
+    setColorsList(copyColors);
   };
 
   useEffect(() => {

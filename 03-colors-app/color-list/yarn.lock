@@ -2399,6 +2399,7 @@ __metadata:
     react: ^17.0.2
     react-dom: ^17.0.2
     style-loader: ^3.3.0
+    sweetalert2: ^11.4.20
     webpack: ^5.57.1
     webpack-cli: ^4.9.0
     webpack-dev-server: ^4.3.1
@@ -5369,6 +5370,13 @@ __metadata:
   version: 1.0.0
   resolution: "supports-preserve-symlinks-flag@npm:1.0.0"
   checksum: 53b1e247e68e05db7b3808b99b892bd36fb096e6fba213a06da7fab22045e97597db425c724f2bbd6c99a3c295e1e73f3e4de78592289f38431049e1277ca0ae
+  languageName: node
+  linkType: hard
+
+"sweetalert2@npm:^11.4.20":
+  version: 11.4.20
+  resolution: "sweetalert2@npm:11.4.20"
+  checksum: 3519db820156190d3e847c9961d739999a80553adb2f4282925b32691f555dcc8a05fb3d3bfcd88cc490a9173387ddbd764c35e9d38656eee828288a3fe7d50b
   languageName: node
   linkType: hard
 

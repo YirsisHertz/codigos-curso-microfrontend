@@ -43,7 +43,9 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "color_picker",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        colorPicker: "color_picker@http://localhost:3001/remoteEntry.js",
+      },
       exposes: {
         "./ColorPicker": "./src/components/ColorPicker.jsx",
         "./useColors": "./src/hooks/useColors.js",

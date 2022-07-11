@@ -1,9 +1,6 @@
 import React from "react";
-import { useColors } from "../hooks/useColors";
 
-const ColorPicker = () => {
-  const { color, handleChangeColor, handleSaveColor } = useColors();
-
+const ColorPicker = ({ color, handleChangeColor, handleSaveColor }) => {
   return (
     <>
       <form onSubmit={handleSaveColor}>

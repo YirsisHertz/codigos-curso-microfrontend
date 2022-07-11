@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import Swal from "sweetalert2";
 
-import { useColors } from "colorPicker/useColors";
-
-const ColorList = () => {
-  const [colorList, setColorList] = useState([]);
-  const { colorsList } = useColors();
-
-  useEffect(() => {
-    setColorList(colorsList);
-    console.log(colorList);
-  }, [colorList]);
+const ColorList = ({ colorsList }) => {
+  const handleCopyColor = (color) => {
+    navigator.clipboard.writeText(color);
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: `Color: ${color} Copied!`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  }; //
 
   return (
     <div className="list-group text-center">
-      {colorList.map((color, index) => (
+      {colorsList.map((color, index) => (
         <button
           key={index}
           type="button"
@@ -24,6 +26,7 @@ const ColorList = () => {
             background: color,
             fontWeight: "bolder",
           }}
+          onClick={() => handleCopyColor(color)}
         >
           {color}
         </button>
