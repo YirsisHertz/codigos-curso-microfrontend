@@ -43,10 +43,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "host",
       filename: "remoteEntry.js",
-      remotes: {
-        colorPicker: "color_picker@http://localhost:3001/remoteEntry.js",
-        colorList: "color_list@http://localhost:3002/remoteEntry.js",
-      },
+      remotes: {},
       exposes: {},
       shared: {
         ...deps,
