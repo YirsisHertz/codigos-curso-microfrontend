@@ -1,14 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import "./index.css";
+import ColorPicker from "colorPicker/ColorPicker";
+import ColorList from "colorList/ColorList";
 
-const App = () => (
-  <div className="container">
-    <div>Name: host</div>
-    <div>Framework: react</div>
-    <div>Language: JavaScript</div>
-    <div>CSS: Empty CSS</div>
-  </div>
-);
+import { useColors } from "colorPicker/useColors";
+
+const App = () => {
+  const { color, colorsList, handleChangeColor, handleSubmitSaveColor } =
+    useColors();
+
+  return (
+    <>
+      <h1 className="text-center bg-dark text-white p-2">Color Picker</h1>
+      <div className="container mt-4">
+        <div className="row">
+          <div className="col-12 col-md-4">
+            <ColorList colorsList={colorsList} />
+          </div>
+          <div className="col-12 col-md-8">
+            <ColorPicker
+              color={color}
+              handleChangeColor={handleChangeColor}
+              handleSubmitSaveColor={handleSubmitSaveColor}
+            />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
 ReactDOM.render(<App />, document.getElementById("app"));
