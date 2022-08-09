@@ -9,10 +9,13 @@ export const counterSlice = createSlice({
     increment: (state) => {
       state.count += 1;
     },
-    clear: () => {
+    clear: (state) => {
       state.count = 0;
+    },
+    incrementByAmount: (state, action) => {
+      state.count += action.payload;
     },
   },
 });
 
-export const { increment } = counterSlice.actions;
+export const { increment, clear, incrementByAmount } = counterSlice.actions;
