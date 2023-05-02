@@ -1,7 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
-const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
     publicPath: "http://localhost:8080/",
@@ -46,17 +45,21 @@ module.exports = (_, argv) => ({
       remotes: {
         nav: "nav@http://localhost:8081/remoteEntry.js",
         counter: "counter@http://localhost:8082/remoteEntry.js",
+        store: "store@http://localhost:5050/remoteEntry.js",
       },
       exposes: {},
       shared: {
-        ...deps,
         react: {
           singleton: true,
-          requiredVersion: deps.react,
+          requiredVersion: "^18.2.0",
         },
         "react-dom": {
           singleton: true,
-          requiredVersion: deps["react-dom"],
+          requiredVersion: "^18.2.0",
+        },
+        sweetalert2: {
+          singleton: true,
+          requiredVersion: "^11.7.3",
         },
       },
     }),

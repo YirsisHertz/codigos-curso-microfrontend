@@ -1,7 +1,6 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
-const deps = require("./package.json").dependencies;
 module.exports = (_, argv) => ({
   output: {
     publicPath: "http://localhost:8081/",
@@ -43,19 +42,24 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "nav",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        store: "store@http://localhost:5050/remoteEntry.js",
+      },
       exposes: {
         "./Navbar": "./src/components/Navbar.jsx",
       },
       shared: {
-        ...deps,
         react: {
           singleton: true,
-          requiredVersion: deps.react,
+          requiredVersion: "^18.2.0",
         },
         "react-dom": {
           singleton: true,
-          requiredVersion: deps["react-dom"],
+          requiredVersion: "^18.2.0",
+        },
+        sweetalert2: {
+          singleton: true,
+          requiredVersion: "^11.7.3",
         },
       },
     }),
